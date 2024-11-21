@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
-import { Baloo_2, Roboto } from "next/font/google/";
+import { Baloo_2, Roboto } from "next/font/google";
 import "./globals.css";
 
 const baloo2 = Baloo_2({
-  subsets: ["latin"],
-  weight: ["500"],
+  subsets: ["latin-ext"],
 });
 
 const roboto = Roboto({
-  subsets: ["latin"],
+  subsets: ["latin-ext"],
   weight: ["400"],
 });
 

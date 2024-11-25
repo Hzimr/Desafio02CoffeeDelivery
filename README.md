@@ -20,9 +20,10 @@
 ## Descrição
 
 Esse app é uma página web que foi criado para resolver o desafio 2 da trilha de React do Ignite da Rocketseat,
-utilizei tailwindcss e nextjs por ter mais familiaridade com esses frameworks apesar de serem mais avançados e não ter a necessidade de utilização deles a principio por ser um projeto básico. No notion você pode encontrar detalhado a descrição do desafio e no figma ver o layout.
+utilizei tailwindcss e nextjs por ter mais familiaridade com esses frameworks, apesar de serem mais avançados e não ter a necessidade de utilização deles a principio. No notion você pode encontrar detalhado a descrição do desafio e no figma ver o layout.
 
 Notion da explicação do desafio 2:
+
 <a href="https://efficient-sloth-d85.notion.site/Desafio-02-Coffee-Delivery-30e42a21fdb44b09a85244fc2c3dbdf9" target="_blank">Desafio 2 Coffee Delivery</a>
 
 Figma do projeto:

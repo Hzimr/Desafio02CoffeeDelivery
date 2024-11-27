@@ -1,5 +1,5 @@
 "use client";
-import { Baloo_2 } from "next/font/google";
+import { Baloo_2, Roboto } from "next/font/google";
 import { HeaderHome } from "./components/headerHome";
 import { Intro } from "./components/intro";
 import Image from "next/image";
@@ -9,6 +9,12 @@ import CafeComLeite from "../app/assets/tiposDeCafe/cafeComLeite.svg";
 const baloo2 = Baloo_2({
   subsets: ["latin-ext"],
 });
+
+const roboto = Roboto({
+  subsets: ["latin-ext"],
+  weight: ["700"],
+});
+
 export default function Home() {
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -38,26 +44,33 @@ export default function Home() {
             Nossos cafés
           </h2>
           <div className="flex flex-wrap gap-8 text-black">
-            <div className="flex h-80 w-64 flex-col items-center rounded-bl-[32px] rounded-br-md rounded-tl-md rounded-tr-[32px] bg-baseCard px-5 pb-5">
-              <div>
+            <div className="flex h-80 w-64 flex-col items-center gap-2 rounded-bl-[32px] rounded-br-md rounded-tl-md rounded-tr-[32px] bg-baseCard px-5 pb-5">
+              <div className="relative -top-10 h-20">
                 <Image
                   src={CafeComLeite}
                   alt=""
                   width={120}
                   height={120}
-                  className="relative -top-10 rounded-full"
+                  className="rounded-full"
                 />
               </div>
+              <span
+                className={`${roboto.className} rounded-3xl bg-yellowLight px-2 py-1 text-xs font-bold text-yellowDark`}
+              >
+                TRADICIONAL
+              </span>
               <h3
                 className={`${baloo2.className} font-sans text-xl font-bold text-black`}
               >
                 Expresso Tradicional
               </h3>
-              <p className="text-center">
-                O tradiocional café feito com água quente e grãos moídos
+              <p className="text-center text-sm text-baseLabel">
+                O tradicional café feito com água quente e grãos moídos
               </p>
-              <section>
-                R$ 9,90{" "}
+              <section className="flex items-center gap-2">
+                <span className="inline">
+                  R$ <p className="inline text-2xl font-bold">9,90</p>
+                </span>
                 <div className="flex h-9 w-[72px] items-center justify-center gap-1 bg-baseButton">
                   <button onClick={subtractValue}>
                     <span>-</span>

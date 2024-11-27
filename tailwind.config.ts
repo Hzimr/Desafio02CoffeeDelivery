@@ -9,7 +9,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        introBackground: "url(/app/assets/background.svg)",
+        introBackground: "url('../app/assets/background.svg')",
       },
       colors: {
         background: "var(--background)",

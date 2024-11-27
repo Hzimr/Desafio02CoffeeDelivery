@@ -14,8 +14,8 @@ const roboto = Roboto({
 });
 export function Intro() {
   return (
-    <main className="flex justify-center px-40 py-24 text-black">
-      <div className="bg-introBackground grid w-full max-w-[1440px] grid-cols-[1fr,1fr] gap-14 py-8">
+    <main className="flex justify-center bg-introBackground px-40 py-24 text-black">
+      <div className="grid w-full max-w-[1440px] grid-cols-[1fr,1fr] gap-14 py-8">
         <div className="flex flex-col gap-4">
           <h1
             className={`${baloo2.className} font-sans text-5xl font-extrabold`}

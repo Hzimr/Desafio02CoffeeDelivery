@@ -5,6 +5,7 @@ import { Intro } from "./components/intro";
 import Image from "next/image";
 import { useRef } from "react";
 import CafeComLeite from "../app/assets/tiposDeCafe/cafeComLeite.svg";
+import { PiShoppingCartSimpleFill } from "react-icons/pi";
 
 const baloo2 = Baloo_2({
   subsets: ["latin-ext"],
@@ -12,7 +13,7 @@ const baloo2 = Baloo_2({
 
 const roboto = Roboto({
   subsets: ["latin-ext"],
-  weight: ["700"],
+  weight: ["400", "700"],
 });
 
 export default function Home() {
@@ -44,7 +45,7 @@ export default function Home() {
             Nossos cafés
           </h2>
           <div className="flex flex-wrap gap-8 text-black">
-            <div className="flex h-80 w-64 flex-col items-center gap-2 rounded-bl-[32px] rounded-br-md rounded-tl-md rounded-tr-[32px] bg-baseCard px-5 pb-5">
+            <div className="flex h-80 w-64 flex-col items-center gap-3 rounded-bl-[32px] rounded-br-md rounded-tl-md rounded-tr-[32px] bg-baseCard px-5 pb-5">
               <div className="relative -top-10 h-20">
                 <Image
                   src={CafeComLeite}
@@ -67,13 +68,18 @@ export default function Home() {
               <p className="text-center text-sm text-baseLabel">
                 O tradicional café feito com água quente e grãos moídos
               </p>
-              <section className="flex items-center gap-2">
+              <section className="mt-6 flex items-center justify-center gap-2">
                 <span className="inline">
-                  R$ <p className="inline text-2xl font-bold">9,90</p>
+                  <p
+                    className={`${roboto.className} inline text-sm font-normal`}
+                  >
+                    R$
+                  </p>{" "}
+                  <p className="inline text-2xl font-bold">9,90</p>
                 </span>
                 <div className="flex h-9 w-[72px] items-center justify-center gap-1 bg-baseButton">
                   <button onClick={subtractValue}>
-                    <span>-</span>
+                    <span className="text-xl text-purple">-</span>
                   </button>
                   <input
                     ref={inputRef}
@@ -82,15 +88,17 @@ export default function Home() {
                     id=""
                     min="0"
                     max="100"
-                    className="no-arrows w-10 appearance-none justify-center bg-transparent text-center"
+                    className="no-arrows w-7 appearance-none justify-center bg-transparent text-center"
                     placeholder="1"
                     defaultValue="1"
                   />
                   <button onClick={addValue}>
-                    <span>+</span>
+                    <span className="text-xl text-purple">+</span>
                   </button>
                 </div>{" "}
-                <button className="bg-purple p-2">Cart</button>
+                <button className="rounded-md bg-purpleDark p-2 text-white">
+                  <PiShoppingCartSimpleFill className="size-5" />
+                </button>
               </section>
             </div>
           </div>

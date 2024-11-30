@@ -1,9 +1,17 @@
 "use client";
 import Image from "next/image";
-import CafeComLeite from "../../app/assets/tiposDeCafe/cafeComLeite.svg";
 import { PiShoppingCartSimpleFill } from "react-icons/pi";
 import { Baloo_2, Roboto } from "next/font/google";
 import { useRef } from "react";
+
+interface CoffeeCardProps {
+  image: HTMLImageElement;
+  tag: string[];
+  name: string;
+  description: string;
+  price: string;
+  id: number;
+}
 
 const baloo2 = Baloo_2({
   subsets: ["latin-ext"],
@@ -14,7 +22,14 @@ const roboto = Roboto({
   weight: ["400", "700"],
 });
 
-export function CoffeeCard() {
+export function CoffeeCard({
+  image,
+  tag,
+  name,
+  description,
+  price,
+  id,
+}: CoffeeCardProps) {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const addValue = () => {
@@ -32,33 +47,39 @@ export function CoffeeCard() {
   };
 
   return (
-    <div className="flex h-80 w-64 flex-col items-center gap-3 rounded-bl-[32px] rounded-br-md rounded-tl-md rounded-tr-[32px] bg-baseCard px-5 pb-5">
+    <div
+      key={id}
+      className="flex h-80 w-64 flex-col items-center gap-3 rounded-bl-[32px] rounded-br-md rounded-tl-md rounded-tr-[32px] bg-baseCard px-5 pb-5"
+    >
       <div className="relative -top-10 h-20">
         <Image
-          src={CafeComLeite}
+          src={image}
           alt=""
           width={120}
           height={120}
           className="rounded-full"
         />
       </div>
-      <span
-        className={`${roboto.className} rounded-3xl bg-yellowLight px-2 py-1 text-xs font-bold text-yellowDark`}
-      >
-        TRADICIONAL
-      </span>
+      <div className="space-x-1">
+        {tag.map((tagItem, index) => (
+          <span
+            key={index}
+            className={`${roboto.className} rounded-3xl bg-yellowLight px-2 py-1 text-xs font-bold text-yellowDark`}
+          >
+            {tagItem}
+          </span>
+        ))}
+      </div>
       <h3
         className={`${baloo2.className} font-sans text-xl font-bold text-black`}
       >
-        Expresso Tradicional
+        {name}
       </h3>
-      <p className="text-center text-sm text-baseLabel">
-        O tradicional café feito com água quente e grãos moídos
-      </p>
+      <p className="text-center text-sm text-baseLabel">{description}</p>
       <section className="mt-6 flex items-center justify-center gap-2">
         <span className="inline">
           <p className={`${roboto.className} inline text-sm font-normal`}>R$</p>{" "}
-          <p className="inline text-2xl font-bold">9,90</p>
+          <p className="inline text-2xl font-bold">{price}</p>
         </span>
         <div className="flex h-9 w-[72px] items-center justify-center gap-1 bg-baseButton">
           <button onClick={subtractValue}>

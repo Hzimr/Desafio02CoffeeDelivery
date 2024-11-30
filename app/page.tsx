@@ -2,6 +2,7 @@ import { Baloo_2 } from "next/font/google";
 import { HeaderHome } from "./components/headerHome";
 import { Intro } from "./components/intro";
 import { CoffeeCard } from "./components/coffeeCard";
+import { coffeeListData } from "./constants/coffeeList";
 
 const baloo2 = Baloo_2({
   subsets: ["latin-ext"],
@@ -20,7 +21,17 @@ export default function Home() {
             Nossos cafés
           </h2>
           <div className="flex flex-wrap gap-8 text-black">
-            <CoffeeCard />
+            {coffeeListData?.map((coffee) => (
+              <CoffeeCard
+                key={coffee.id}
+                id={coffee.id}
+                image={coffee.image}
+                tag={coffee.tag}
+                name={coffee.name}
+                description={coffee.description}
+                price={coffee.price}
+              />
+            ))}
           </div>
         </div>
       </div>

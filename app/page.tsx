@@ -1,5 +1,4 @@
 import { Baloo_2 } from "next/font/google";
-import { HeaderHome } from "./components/headerHome";
 import { Intro } from "./components/intro";
 import { CoffeeCard } from "./components/coffeeCard";
 import { coffeeListData } from "./constants/coffeeList";
@@ -11,7 +10,6 @@ const baloo2 = Baloo_2({
 export default function Home() {
   return (
     <>
-      <HeaderHome />
       <Intro />
       <div className="flex justify-center px-40 py-8">
         <div className="flex w-full max-w-[1440px] flex-col gap-14">

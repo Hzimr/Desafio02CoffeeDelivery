@@ -8,6 +8,7 @@ export default function CheckoutPage() {
     <>
       <div className="flex justify-center px-40 py-8">
         <div className="grid w-full max-w-[1440px] grid-cols-[2fr,1fr] gap-8 text-lg font-bold text-baseSubtitle">
+          {/* Complete seu pedido */}
           <div className="flex flex-col gap-3">
             <h2 className={`${baloo2.className}`}>Complete seu pedido</h2>
             <div className="flex h-96 flex-col gap-8 bg-baseCard p-10">
@@ -138,9 +139,32 @@ export default function CheckoutPage() {
               </div>
             </div>
           </div>
+          {/* Café Selecionados */}
           <div className="flex flex-col gap-3 pt-1">
             <h2 className={`${baloo2.className}`}>Cafés selecionados</h2>
-            <div className="flex w-full min-w-[320px] flex-col items-center gap-3 rounded-bl-[32px] rounded-br-md rounded-tl-md rounded-tr-[32px] bg-baseCard p-10"></div>
+            <div className="flex w-full min-w-[320px] flex-col items-center gap-3 rounded-bl-[32px] rounded-br-md rounded-tl-md rounded-tr-[32px] bg-baseCard p-10">
+              <div>
+                <div>Item1</div>
+                <div>Item2</div>
+              </div>
+              <div className="flex w-full flex-col">
+                <section className="flex justify-between">
+                  <p>Total de itens</p>
+                  <p>R$ 29,70</p>
+                </section>
+                <section className="flex justify-between">
+                  <p>Entrega</p>
+                  <p>R$ 5,00</p>
+                </section>
+                <section className="flex justify-between">
+                  <p>Total</p>
+                  <p>R$ 34,70</p>
+                </section>
+              </div>
+              <button className="w-full rounded-md bg-yellow py-4 text-sm font-bold text-white hover:opacity-80">
+                Confirmar Pedido
+              </button>
+            </div>
           </div>
         </div>
       </div>

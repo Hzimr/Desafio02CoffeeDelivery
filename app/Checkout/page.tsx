@@ -1,5 +1,6 @@
 import { Baloo_2 } from "next/font/google";
-import { MdOutlineAttachMoney } from "react-icons/md";
+import { MdOutlineAttachMoney, MdPix } from "react-icons/md";
+import { PiBankLight, PiCreditCardLight, PiMoney } from "react-icons/pi";
 
 const baloo2 = Baloo_2({
   subsets: ["latin-ext"],
@@ -15,7 +16,10 @@ export default function CheckoutPage() {
             <div className="h-96 bg-baseCard"></div>
             <div className="flex h-52 flex-col gap-8 bg-baseCard p-10">
               <section className="flex flex-row justify-start">
-                <MdOutlineAttachMoney />
+                <MdOutlineAttachMoney
+                  className="font-light text-purple"
+                  size={22}
+                />
                 <div>
                   <h3 className="text-base">Pagamento</h3>
                   <p className="text-sm font-normal">
@@ -25,30 +29,42 @@ export default function CheckoutPage() {
                 </div>
               </section>
               <div className="flex flex-row gap-3 pt-1">
-                <input
-                  className="w-36 appearance-none rounded-md bg-baseButton text-xs after:box-border after:block after:w-36 after:py-4 after:text-center after:content-[attr(value)] checked:after:rounded-md checked:after:border checked:after:border-purple checked:after:bg-purpleLight hover:cursor-pointer"
-                  type="radio"
-                  name="pgto"
-                  value="Dinheiro"
-                />
-                <input
-                  className="w-36 appearance-none rounded-md bg-baseButton text-xs after:box-border after:block after:w-36 after:py-4 after:text-center after:content-[attr(value)] checked:after:rounded-md checked:after:border checked:after:border-purple checked:after:bg-purpleLight hover:cursor-pointer"
-                  type="radio"
-                  name="pgto"
-                  value="Cartão de Crédito"
-                />
-                <input
-                  className="w-36 appearance-none rounded-md bg-baseButton text-xs after:box-border after:block after:w-36 after:py-4 after:text-center after:content-[attr(value)] checked:after:rounded-md checked:after:border checked:after:border-purple checked:after:bg-purpleLight hover:cursor-pointer"
-                  type="radio"
-                  name="pgto"
-                  value="Cartão de Débito"
-                />
-                <input
-                  className="w-36 appearance-none rounded-md bg-baseButton text-xs after:box-border after:block after:w-36 after:py-4 after:text-center after:content-[attr(value)] checked:after:rounded-md checked:after:border checked:after:border-purple checked:after:bg-purpleLight hover:cursor-pointer"
-                  type="radio"
-                  name="pgto"
-                  value="PIX"
-                />
+                <label className="flex items-center rounded-md border border-transparent bg-baseButton px-4 hover:cursor-pointer has-[:checked]:border has-[:checked]:border-purple has-[:checked]:bg-purpleLight">
+                  <PiMoney className="text-purple" />
+                  <input
+                    className="appearance-none rounded-md text-xs after:box-border after:block after:w-28 after:py-4 after:pl-3 after:content-[attr(value)]"
+                    type="radio"
+                    name="pgto"
+                    value="Dinheiro"
+                  />
+                </label>
+                <label className="flex items-center rounded-md border border-transparent bg-baseButton px-4 hover:cursor-pointer has-[:checked]:border has-[:checked]:border-purple has-[:checked]:bg-purpleLight">
+                  <PiCreditCardLight className="text-purple" />
+                  <input
+                    className="appearance-none rounded-md text-xs after:box-border after:block after:w-28 after:py-4 after:pl-3 after:content-[attr(value)]"
+                    type="radio"
+                    name="pgto"
+                    value="Cartão de Crédito"
+                  />
+                </label>
+                <label className="flex items-center rounded-md border border-transparent bg-baseButton px-4 hover:cursor-pointer has-[:checked]:border has-[:checked]:border-purple has-[:checked]:bg-purpleLight">
+                  <PiBankLight className="text-purple" />
+                  <input
+                    className="appearance-none rounded-md text-xs after:box-border after:block after:w-28 after:py-4 after:pl-3 after:content-[attr(value)]"
+                    type="radio"
+                    name="pgto"
+                    value="Cartão de Débito"
+                  />
+                </label>
+                <label className="flex items-center rounded-md border border-transparent bg-baseButton px-4 hover:cursor-pointer has-[:checked]:border has-[:checked]:border-purple has-[:checked]:bg-purpleLight">
+                  <MdPix className="text-purple" />
+                  <input
+                    className="appearance-none rounded-md text-xs after:box-border after:block after:w-28 after:py-4 after:pl-3 after:content-[attr(value)]"
+                    type="radio"
+                    name="pgto"
+                    value="PIX"
+                  />
+                </label>
               </div>
             </div>
           </div>

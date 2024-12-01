@@ -1,10 +1,6 @@
-import { Baloo_2 } from "next/font/google";
 import { MdOutlineAttachMoney, MdPix } from "react-icons/md";
 import { PiBankLight, PiCreditCardLight, PiMoney } from "react-icons/pi";
-
-const baloo2 = Baloo_2({
-  subsets: ["latin-ext"],
-});
+import { roboto, baloo2 } from "../fonts/fonts";
 
 export default function CheckoutPage() {
   return (
@@ -21,8 +17,10 @@ export default function CheckoutPage() {
                   size={22}
                 />
                 <div>
-                  <h3 className="text-base">Pagamento</h3>
-                  <p className="text-sm font-normal">
+                  <h3 className={`${roboto.className} text-base font-medium`}>
+                    Pagamento
+                  </h3>
+                  <p className={`${roboto.className} text-sm font-normal`}>
                     O pagamento é feito na entrega. Escolha a forma que deseja
                     pagar
                   </p>

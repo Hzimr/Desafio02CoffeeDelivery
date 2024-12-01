@@ -1,17 +1,9 @@
 import { PiCoffeeFill, PiPackageFill, PiTimerFill } from "react-icons/pi";
-import { Baloo_2, Roboto } from "next/font/google";
 import CoffeeImg from "../assets/coffeeImg.svg";
 import { FaShoppingCart } from "react-icons/fa";
 import Image from "next/image";
+import { roboto, baloo2 } from "../fonts/fonts";
 
-const baloo2 = Baloo_2({
-  subsets: ["latin-ext"],
-});
-
-const roboto = Roboto({
-  subsets: ["latin-ext"],
-  weight: ["400"],
-});
 export function Intro() {
   return (
     <main className="flex justify-center bg-introBackground px-40 py-24 text-black">

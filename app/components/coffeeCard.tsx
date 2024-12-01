@@ -1,9 +1,8 @@
 "use client";
 import Image from "next/image";
 import { PiShoppingCartSimpleFill } from "react-icons/pi";
-import { Baloo_2, Roboto } from "next/font/google";
 import { useRef } from "react";
-
+import { roboto, baloo2 } from "../fonts/fonts";
 interface CoffeeCardProps {
   image: HTMLImageElement;
   tag: string[];
@@ -12,15 +11,6 @@ interface CoffeeCardProps {
   price: string;
   id: number;
 }
-
-const baloo2 = Baloo_2({
-  subsets: ["latin-ext"],
-});
-
-const roboto = Roboto({
-  subsets: ["latin-ext"],
-  weight: ["400", "700"],
-});
 
 export function CoffeeCard({
   image,

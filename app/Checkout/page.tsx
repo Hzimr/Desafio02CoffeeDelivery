@@ -1,6 +1,7 @@
 import { MdOutlineAttachMoney, MdPix } from "react-icons/md";
 import { PiBankLight, PiCreditCardLight, PiMoney } from "react-icons/pi";
 import { roboto, baloo2 } from "../fonts/fonts";
+import { CiLocationOn } from "react-icons/ci";
 
 export default function CheckoutPage() {
   return (
@@ -9,7 +10,78 @@ export default function CheckoutPage() {
         <div className="grid w-full max-w-[1440px] grid-cols-[2fr,1fr] gap-8 text-lg font-bold text-baseSubtitle">
           <div className="flex flex-col gap-3">
             <h2 className={`${baloo2.className}`}>Complete seu pedido</h2>
-            <div className="h-96 bg-baseCard"></div>
+            <div className="flex h-96 flex-col gap-8 bg-baseCard p-10">
+              <div className="flex flex-row items-start justify-start gap-2">
+                <CiLocationOn size={26} className="text-yellowDark" />
+                <div>
+                  <h4 className={`${roboto.className} text-base font-normal`}>
+                    Endereço de Entrega
+                  </h4>
+                  <p className={`${roboto.className} text-sm font-normal`}>
+                    Informe o endereço onde deseja receber seu pedido
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-col gap-4">
+                <section>
+                  <input
+                    type="text"
+                    name=""
+                    id=""
+                    placeholder="CEP"
+                    className="rounded border bg-baseInput p-3 text-sm font-normal text-baseLabel focus:border-purple focus:outline-none focus:ring-1 focus:ring-purple"
+                  />
+                </section>
+                <section>
+                  <input
+                    type="text"
+                    name=""
+                    id=""
+                    placeholder="Rua"
+                    className="w-full rounded border bg-baseInput p-3 text-sm font-normal text-baseLabel focus:border-purple focus:outline-none focus:ring-1 focus:ring-purple"
+                  />
+                </section>
+                <section className="flex gap-3">
+                  <input
+                    type="text"
+                    name=""
+                    id=""
+                    placeholder="Número"
+                    className="rounded border bg-baseInput p-3 text-sm font-normal text-baseLabel focus:border-purple focus:outline-none focus:ring-1 focus:ring-purple"
+                  />
+                  <input
+                    type="text"
+                    name=""
+                    id=""
+                    placeholder="Complemento"
+                    className="w-full rounded border bg-baseInput p-3 text-sm font-normal text-baseLabel focus:border-purple focus:outline-none focus:ring-1 focus:ring-purple"
+                  />
+                </section>
+                <section className="flex gap-3">
+                  <input
+                    type="text"
+                    name=""
+                    id=""
+                    placeholder="Bairro"
+                    className="rounded border bg-baseInput p-3 text-sm font-normal text-baseLabel focus:border-purple focus:outline-none focus:ring-1 focus:ring-purple"
+                  />
+                  <input
+                    type="text"
+                    name=""
+                    id=""
+                    placeholder="Cidade"
+                    className="w-full rounded border bg-baseInput p-3 text-sm font-normal text-baseLabel focus:border-purple focus:outline-none focus:ring-1 focus:ring-purple"
+                  />
+                  <input
+                    type="text"
+                    name=""
+                    id=""
+                    placeholder="UF"
+                    className="rounded border bg-baseInput p-3 text-sm font-normal text-baseLabel focus:border-purple focus:outline-none focus:ring-1 focus:ring-purple"
+                  />
+                </section>
+              </div>
+            </div>
             <div className="flex h-52 flex-col gap-8 bg-baseCard p-10">
               <section className="flex flex-row justify-start">
                 <MdOutlineAttachMoney

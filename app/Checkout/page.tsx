@@ -1,9 +1,13 @@
+"use client";
 import { MdOutlineAttachMoney, MdPix } from "react-icons/md";
 import { PiBankLight, PiCreditCardLight, PiMoney } from "react-icons/pi";
 import { roboto, baloo2 } from "../fonts/fonts";
 import { CiLocationOn } from "react-icons/ci";
+import { useRouter } from "next/navigation";
 
 export default function CheckoutPage() {
+  const router = useRouter();
+
   return (
     <>
       <div className="flex justify-center px-40 py-8">
@@ -161,7 +165,10 @@ export default function CheckoutPage() {
                   <p>R$ 34,70</p>
                 </section>
               </div>
-              <button className="w-full rounded-md bg-yellow py-4 text-sm font-bold text-white hover:opacity-80">
+              <button
+                onClick={() => router.push("/Success")}
+                className="w-full rounded-md bg-yellow py-4 text-sm font-bold text-white hover:opacity-80"
+              >
                 Confirmar Pedido
               </button>
             </div>

@@ -1,8 +1,8 @@
-import { FaShoppingCart } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
 import Logo from "../assets/logo.svg";
 import Image from "next/image";
 import Link from "next/link";
+import { CartControl } from "./cartControl";
 
 export function Header() {
   return (
@@ -16,12 +16,7 @@ export function Header() {
             <IoLocationSharp className="size-5" />
             Sobral, CE
           </div>
-          <Link
-            href="/Checkout"
-            className="w-10 rounded-lg bg-yellowLight p-2 text-yellowDark"
-          >
-            <FaShoppingCart className="size-5" />
-          </Link>
+          <CartControl />
         </section>
       </nav>
     </header>
